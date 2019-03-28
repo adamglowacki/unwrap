@@ -1,0 +1,36 @@
+name:                unwrap
+version:             0.1.0.0
+github:              "githubuser/unwrap"
+license:             BSD3
+author:              "Author name here"
+maintainer:          "example@example.com"
+copyright:           "2019 Author name here"
+
+dependencies:
+- base >= 4.7 && < 5
+- text
+
+library:
+  source-dirs: src
+
+executables:
+  unwrap:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - unwrap
+
+tests:
+  unwrap-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - unwrap
